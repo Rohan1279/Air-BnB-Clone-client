@@ -62,7 +62,10 @@ const Navbar = () => {
 
                     <hr className="border-gray-200" />
                     <div
-                      onClick={logout}
+                      onClick={() => {
+                        logout();
+                        setIsDropdownOpen(false);
+                      }}
                       className="flex items-center cursor-pointer p-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform  hover:bg-gray-100 "
                     >
                       <svg
