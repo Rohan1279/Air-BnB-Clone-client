@@ -15,7 +15,7 @@ const Payment = ({ handleBooking }) => {
       ></textarea>
 
       <button
-        className="py-2 px-4 rounded-md hover:text-gray-100 bg-gradient-to-r from-pink-500 to-rose-400 text-white"
+        className="py-2 px-4 rounded-md hover:text-gray-100 bg-gradient-to-r from-pink-500 to-rose-400 text-white active:scale-95 transition-all"
         onClick={handleBooking}
       >
         Pay
