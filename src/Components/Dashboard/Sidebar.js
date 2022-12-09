@@ -6,6 +6,9 @@ import {
 import { Link } from "react-router-dom";
 import PrimaryButton from "../Button/PrimaryButton";
 import { AuthContext } from "../../contexts/AuthProvider";
+import UserMenu from "./UserMenu";
+import AdminMenu from "./AdminMenu";
+import HostMenu from "./HostMenu";
 // import UserMenu from "./UserMenu";
 // import AdminMenu from "./AdminMenu";
 // import HostMenu from "./HostMenu";
@@ -14,6 +17,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 // import HostMenu from './HostMenu'
 
 const Sidebar = ({ role, loading }) => {
+  console.log(role);
   const { user, logout } = useContext(AuthContext);
   const [isActive, setActive] = useState("false");
   console.log(role);
@@ -26,7 +30,7 @@ const Sidebar = ({ role, loading }) => {
       {/* Small Screen Navbar */}
       <div className="bg-gray-100 text-gray-800 flex justify-between md:hidden">
         <div>
-          <div className="block cursor-pointer p-4 font-bold ">
+          <div className="block cursor-pointer p-4 font-bold">
             <Link to="/">Air BnB Clone</Link>
           </div>
         </div>
@@ -75,11 +79,12 @@ const Sidebar = ({ role, loading }) => {
           {/* Nav Items */}
           <div className="flex flex-col justify-between flex-1 mt-6">
             <nav>
-              {/* {role && role !== "requested" ? (
+              {/* <UserMenu /> */}
+              {role && role !== "requested" ? (
                 <>{role === "admin" ? <AdminMenu /> : <HostMenu />} </>
               ) : (
                 <UserMenu />
-              )} */}
+              )}
             </nav>
           </div>
         </div>
